@@ -11816,6 +11816,7 @@ body.dark-theme {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    display:inline-block;
   }
 
 .button {
