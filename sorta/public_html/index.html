@@ -117,45 +117,6 @@
 
     <!-- index js -->
     <script src="assets/js/index.js"></script>
-    <script src="https://media.twiliocdn.com/sdk/js/chat/v3.2/twilio-chat.min.js"></script>
-    <form id="send-sms">
-        <label>
-        <p>Phone Number: </p>
-          <input type="text" id="to">
-        </label>
-        <br>
-        <label>
-          <p>Email:</p>
-          <input type="text" id="message">
-        </label>
-        <br>
-        <button type="submit">Subscribe</button>
-      </form>
-      <script>
-        var form = document.getElementById('send-sms');
-        form.addEventListener('submit', function(event) {
-          event.preventDefault();
-      
-          var to = document.getElementById('to').value;
-          var message = document.getElementById('message').value;
-      
-          // Use the Twilio REST API to send the SMS message
-          fetch('https://api.twilio.com/2010-04-01/Accounts/YOUR_ACCOUNT_SID/Messages.json', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'To=' + encodeURIComponent(to) + '&From=YOUR_TWILIO_NUMBER' + '&Body=' + encodeURIComponent(message),
-            auth: 'YOUR_ACCOUNT_SID:YOUR_AUTH_TOKEN'
-          })
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            console.log(data);
-          });
-        });
-      </script>
 
     <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
