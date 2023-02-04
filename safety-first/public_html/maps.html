@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description">
+    <meta name="author" content="Devcrud">
+    <title>Safety First</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+    <!-- Bootstrap + main styles -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- For Maps JavaScript API -->
+    <!-- Import JS files -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="cluster-maps.js"></script>
+    <!-- Import Google Maps Clusters -->
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    
+    <!-- page navbar -->
+    <nav class="page-navbar" data-spy="affix" data-offset-top="10">
+        <ul class="nav-navbar container">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="maps.html" class="nav-link">Safety Spots</a></li>
+            <li class="nav-item"><a href="journal.html" class="nav-link">Empowerment</a></li>
+        </ul>
+    </nav><!-- end of page navbar -->
+
+    <div class="theme-selector">
+        <a href="javascript:void(0)" class="spinner">
+            <i class="ti-paint-bucket"></i>
+        </a>
+        <div class="body">
+            <a href="javascript:void(0)" class="light"></a>
+            <a href="javascript:void(0)" class="dark"></a>
+        </div>
+    </div>  
+
+    <!-- page header -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="header-title">UCSC Safety Map</h1>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- page container -->
+    <div class="container page-container">
+        <div class="col-md-10 col-lg-8 m-auto">
+            <h6 class="title mb-4">Explore Safety Map here!</h6>
+        </div>  
+
+        <div class="col-md-10 col-lg-8 m-auto">
+            <p class="mb-5">Walking alone in the dark? Browse the UCSC safety map to locate popular walking paths 
+                and well-light areas to guide you along a safe journey home. Check out the key below for reference.</p>
+        </div>
+        
+        <!-- row -->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <!-- Single point map -->
+                <!--The div element for the map -->
+                <div class="card-img" id="map"></div>
+
+                <!-- 
+                The `defer` attribute causes the callback to execute after the full HTML
+                document has been parsed. For non-blocking uses, avoiding race conditions,
+                and consistent behavior across browsers, consider loading using Promises
+                with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+                -->
+                <!-- Load script based on personal API -->
+                <!-- <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+                defer
+              ></script> -->
+              <!-- End single point map -->
+
+                <!-- Begin cluster map  -->
+                <!-- 
+                The `defer` attribute causes the callback to execute after the full HTML
+                document has been parsed. For non-blocking uses, avoiding race conditions,
+                and consistent behavior across browsers, consider loading using Promises
+                with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+                -->
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+                defer
+            ></script>
+            <!-- End cluster map -->
+
+                <div class="card-body">
+
+                    <p>1. Highlighted <b>RED</b> numerical regions indicate crucial well-lit landmarks and higher frequency of lighted paths overall. <br>
+                        2. Highlighted <b>BLUE</b> numerical regions indicate possible well-light regions and lower frequency of lighted paths overall. <br>
+                        3. Zoom into the map to take note of key well-light and popular walking areas. <br>
+                        4. Click on a pinpoint to see indication of lampost at selected point.
+                        5. Select bus stop pin points to see which buses travel to selected bus 
+                        stop <i><b>(including the Loop Bus).</i></b> </p>
+                </div>                  
+                </a>
+            </div>  
+        </div><!-- end of row -->
+    </div> <!-- end of page container -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- index js -->
+    <script src="assets/js/index.js"></script>
+
+</body>
+</html>
