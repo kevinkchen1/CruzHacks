@@ -109,6 +109,31 @@
         <!-- end of row -->
     <!-- core  -->
     
+    <script type="text/javascript">
+        window.__be = window.__be || {};
+        window.__be.id = "59cd403b8187680007244146"; // put your chat widget id here
+
+        var BE_API = window.BE_API || {};
+
+        // open chat widget window after load
+        BE_API.onLoad = function () {
+            BE_API.openChatWidget();
+        };
+
+        (function() {
+            var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+            be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.botengine.ai/widget/plugin.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+        })();
+    </script>
+
+    <style type="text/css">
+        #botengine-chat {
+            width: 100% !important;
+        }
+    </style>
+
+
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
