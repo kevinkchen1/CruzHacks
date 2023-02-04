@@ -83,8 +83,9 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
+        const size = 300;
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -108,15 +109,17 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            const classPrediction = 
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2) + '%';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
+
 </script>
 
                 <div class="card-body">
-                    <p>Clic the Start button above to try your pose in the camera and practice perfect form!</p>
+                     <!-- Click the Start button above to try your pose in the camera and practice perfect form!</p> -->
+                    <p>Click the Start button above to scan your item through the camera and determine the proper disposal method!</p>
                 </div>                  
                 </a>
             </div>  
