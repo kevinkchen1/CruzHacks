@@ -14,7 +14,7 @@
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="light-theme">
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="">
     
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
@@ -29,35 +29,47 @@
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content">
-            <h1 class="header-title">Community Empowerment Building</h1>
+            <h1 class="header-title">Sorta Scanner</h1>
         </div>
     </header><!-- end of page header -->
 
     <!-- page container -->
     <div class="container page-container">
         <div class="col-md-10 col-lg-8 m-auto">
-            <h6 class="title mb-4">Confidence Poses</h6>
+            <h6 class="title mb-4">Tips for Identifying Disposable Items</h6>
         </div>  
         <div class="col-md-10 col-lg-8 m-auto">
-            <p id="pics">Power poses in yoga are known to improve confidence over time. Hearing about the worrisome events that occur on campus 
-                can be scary and isolating, so try a few of these poses to empower yourself!
+            
+            <p><img src="assets/imgs/trash.jpg" style="width:150px;height:130px;">
+            </p> Trash refers to any waste material or discarded item that is no longer useful and considered to be unwanted. This typically includes items such as 
+            paper, plastic, glass, food waste, and other similar items that are generated from daily activities and need to be disposed of. It is usually separated into 
+            different categories based on its composition and potential for recycling or harm to the environment.</p>
+            <p>
+            <br>
             </p>
-            <img src="assets/imgs/Confidence.jpg" style="width:50px;height:70px;">
-            This is the Confidence Pose</p>
-            <img src="assets/imgs/Strength.jpg" style="width:50px;height:70px;">
-            This is the Strength Pose</p>
-            <img src="assets/imgs/Power.jpg" style="width:50px;height:70px;">
-            This is the Power Pose</p>
-            <img src="assets/imgs/Celebrate.jpg" style="width:50px;height:70px;">
-            This is the Celebrate Pose</p>
-        </div>
+            
+            
+            <p><img src="assets/imgs/compost.jpg" style="width:150px;height:150px;">
+            </p> Compostable materials are biodegradable items that can break down into natural elements. 
+            Compostable items include food waste, such as fruits and vegetables, ard waste, such as leaves, grass clippings, branches
+            and paper products, such as napkins and paper towels.
+            <br>
+            <br>
+            <br>
+             </p>    
+             <p><img src="assets/imgs/recycle.jpg" style="width:150px;height:150px;">
+            </p>Recyclable items are materials that can be reused to make new products after they are no longer needed. 
+            This includes items like paper, cardboard, plastic bottles, metal cans, and glass containers. To determine what is 
+            recyclable in your area, check with your local recycling program or waste management service.
+        <br>
+        </p>  
         
+        </div>
         <!-- row -->
         <div class="row">
             <div class="col">
+        <p>Click the Start button below to scan your item through the camera and determine the proper disposal method!</p>
 
-
-<div></div>
 <button id = "button-pose" type="button" onclick="init()">Start</button>
 <div><canvas id = "canvas"></canvas></div>
 <div id="webcam-container"></div>
@@ -85,7 +97,7 @@
         // Convenience function to setup a webcam
         const size = 300;
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(500, 400, flip); // width, height, flip
+        webcam = new tmImage.Webcam(450, 350, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -117,10 +129,9 @@
 
 </script>
 
-
                 <div class="card-body">
                      <!-- Click the Start button above to try your pose in the camera and practice perfect form!</p> -->
-                    <p>Click the Start button above to scan your item through the camera and determine the proper disposal method!</p>
+                    
                 </div>                  
                 </a>
             </div>  
