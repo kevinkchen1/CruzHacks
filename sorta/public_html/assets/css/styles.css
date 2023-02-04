@@ -11811,6 +11811,13 @@ body.dark-theme {
   padding: 40px;
 }
 
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
 .button {
   padding: 20px 50px;
   background-color: green;
@@ -11832,4 +11839,3 @@ body.dark-theme {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-  
