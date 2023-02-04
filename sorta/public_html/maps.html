@@ -125,13 +125,13 @@
           var message = document.getElementById('message').value;
       
           // Use the Twilio REST API to send the SMS message
-          fetch('https://api.twilio.com/2010-04-01/Accounts/YOUR_ACCOUNT_SID/Messages.json', {
+          fetch('https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: 'To=' + encodeURIComponent(to) + '&From=YOUR_TWILIO_NUMBER' + '&Body=' + encodeURIComponent(message),
-            auth: 'YOUR_ACCOUNT_SID:YOUR_AUTH_TOKEN'
+            body: 'To=' + encodeURIComponent(to) + '&From=18884870108' + '&Body=' + encodeURIComponent(message),
+            auth: 'YOUR_ACCOUNT_SID:6f897de265107d36ee0f1bf06b5c3235'
           })
           .then(function(response) {
             return response.json();
