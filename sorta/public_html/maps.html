@@ -163,19 +163,21 @@
               event.preventDefault();
                 console.log('submitting')
               var to = document.getElementById('phone_number').value;
+              console.log({to})
             //   var message = document.getElementById('message').value;
-            // var message = "Hi! Welcome to Sorta's Message Subscriptions! We will be sending you weekly updates on waste disposal advice, recycling centers nearby, and how you can get involved in creating a cleaner enviornment! Text STOP to unsubscribe"
-              var message = "Hi"
-          
+              var message = "Hi! Welcome to Sorta's Message Subscriptions! We will be sending you weekly updates on waste disposal advice, recycling centers nearby, and how you can get involved in creating a cleaner enviornment! Text STOP to unsubscribe"
+              
+              var body = 'To=' + to + '&From=18884870108' + '&Body=' + encodeURIComponent(message)
+              console.log({body})
               // Use the Twilio REST API to send the SMS message
               fetch('https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json', {
                 method: 'POST',
                 headers: {
-                //   'Content-Type': 'application/x-www-form-urlencoded',
-                  'Content-Type': 'application/json',
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                //   'Content-Type': 'application/json',
                   "Authorization":`Basic ${btoa('AC505469728a3776edaf584af8befb9d2b:87594cf8b3052ff9b3336841d475debb')}`
                 },
-                body: 'To=' + encodeURIComponent(to) + '&From=18884870108' + '&Body=' + encodeURIComponent(message),
+                body
               })
               .then(function(response) {
                 return response.json();
