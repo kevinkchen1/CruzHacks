@@ -1,4 +1,4 @@
-# sorta
+# Sorta
 
 ## Inspiration
 The inspiration behind Sorta stems from the growing need to better manage our waste and protect the environment. With increasing levels of pollution and waste, it's becoming increasingly important to educate people and provide practical solutions to reduce waste and promote sustainability. Sorta was created with the goal of making waste management easy, accessible, and impactful for everyone. By providing a simple and convenient platform for waste management, Sorta aims to inspire and empower individuals to take action and make a difference in their communities.
