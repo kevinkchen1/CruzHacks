@@ -109,6 +109,7 @@
 
     <!-- index js -->
     <script src="assets/js/index.js"></script>
+    <!--
     <script src="https://media.twiliocdn.com/sdk/js/chat/v3.2/twilio-chat.min.js"></script>
     <form id="send-sms">
         <label>
@@ -144,6 +145,42 @@
           });
         });
       </script>
+      -->
+      <html>
+    
+        <body>
+          <form action="send-sms.php" method="post">
+            <input type="text" id="phone_number" placeholder="Enter phone number">
+            <input type="submit" id="Subscribe">
+          </form>
+          <script>
+            var form = document.getElementById('send-sms');
+            form.addEventListener('submit', function(event) {
+              event.preventDefault();
+          
+              var to = document.getElementById('to').value;
+              var message = document.getElementById('message').value;
+          
+              // Use the Twilio REST API to send the SMS message
+              fetch('https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'To=' + encodeURIComponent(to) + '&From=18884870108' + '&Body=' + encodeURIComponent(message),
+                auth: 'YOUR_ACCOUNT_SID:87594cf8b3052ff9b3336841d475debb'
+              })
+              .then(function(response) {
+                return response.json();
+              })
+              .then(function(data) {
+                console.log(data);
+              });
+            });
+          </script>
+        </body>
+      </html>
+    
 
     <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
