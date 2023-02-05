@@ -153,28 +153,28 @@
         });
       </script>
       -->
-      <html>
-    
-        <body>
+        <form id="send-sms">
             <input type="text" id="phone_number" placeholder="Enter phone number">
-            <input type="submit" id="Subscribe">
+            <input type="submit">
           </form>
           <script>
             var form = document.getElementById('send-sms');
             form.addEventListener('submit', function(event) {
               event.preventDefault();
-          
-              var to = document.getElementById('to').value;
-              var message = document.getElementById('message').value;
+                console.log('submitting')
+              var to = document.getElementById('phone_number').value;
+            //   var message = document.getElementById('message').value;
+            var message = "Hi! Welcome to Sorta's Message Subscriptions! We will be sending you weekly updates on waste disposal advice, recycling centers nearby, and how you can get involved in creating a cleaner enviornment! Text STOP to unsubscribe"
           
               // Use the Twilio REST API to send the SMS message
               fetch('https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json', {
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded'
+                //   'Content-Type': 'application/x-www-form-urlencoded',
+                  'Content-Type': 'application/json',
+                  "Authorization":`Basic ${btoa('AC505469728a3776edaf584af8befb9d2b:87594cf8b3052ff9b3336841d475debb')}`
                 },
                 body: 'To=' + encodeURIComponent(to) + '&From=18884870108' + '&Body=' + encodeURIComponent(message),
-                auth: 'YOUR_ACCOUNT_SID:87594cf8b3052ff9b3336841d475debb'
               })
               .then(function(response) {
                 return response.json();
@@ -184,19 +184,7 @@
               });
             });
           </script>
-          <?php
-          $ch = curl_init(curl 'https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json' -X POST \
-          --data-urlencode 'To=+18583537195' \
-          --data-urlencode 'MessagingServiceSid=MG6611ea65a7b8ce4f2cbacfdc90c173db' \
-          --data-urlencode 'Body=Hi! Welcome to Sorta's Message Subscriptions! We will be sending you weekly updates on waste disposal advice, recycling centers nearby, and how you can get involved in creating a cleaner enviornment! Text STOP to unsubscribe' \
-          -u AC505469728a3776edaf584af8befb9d2b:[Redacted]);
-          $server_outpput = curl_exec($ch);
-          curl_close($ch);
-          print $server_output;
-          ?>
-        </body>
-      </html>
-    
+        
 
     <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
