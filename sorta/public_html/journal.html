@@ -20,8 +20,8 @@
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="journal.html" class="nav-link">Sorta Scanner</a></li>
             <li class="nav-item"><a href="maps.html" class="nav-link">Resources</a></li>
+            <li class="nav-item"><a href="journal.html" class="nav-link">Sorta Scanner</a></li>
         </ul>
     </nav><!-- end of page navbar -->
 
@@ -70,7 +70,7 @@
 <button id = "button-pose" type="button" onclick="init()">Start</button>
 <div><canvas id = "canvas"></canvas></div>
 <div id="webcam-container"></div>
-<div id="label-container"></div>
+<div id="label-container" style="font-size: 4rem"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -112,16 +112,54 @@
         await predict();
         window.requestAnimationFrame(loop);
     }
-
+     
+    function indexOfMaximumValue(my_array) {
+        if (my_array.length === 0) {
+            return -1;
+        }
+        else{
+        var maximumValue = my_array[0];
+        var maxIndex = 0;
+ 
+        for (var i = 1; i < my_array.length; i++) {
+          if (my_array[i] > maximumValue) {
+              maxIndex = i;
+              maximumValue = my_array[i];
+          }
+        }
+        return maxIndex;
+        }
+    }
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
+        //alert(prediction[0].probability.toFixed(2))
+        /*
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = 
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2) + '%';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
+        */
+        const findMax1 = [];
+        for (let i = 0; i < maxPredictions; i++) {
+            findMax1.push(prediction[i].probability.toFixed(2));
+        }
+            var result = indexOfMaximumValue(findMax1)
+            var type = "Detecting...";
+            if (result == 0){
+                type = "Recycle";
+            }
+            else if (result == 1){
+                type =  "Compost";
+            }
+            else if (result == 2){
+                type = "Landfill"
+            }
+            labelContainer.childNodes[0].innerHTML = type;
+        
+        
     }
 
 </script>
