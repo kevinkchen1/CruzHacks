@@ -184,6 +184,16 @@
               });
             });
           </script>
+          <?php
+          $ch = curl_init(curl 'https://api.twilio.com/2010-04-01/Accounts/AC505469728a3776edaf584af8befb9d2b/Messages.json' -X POST \
+          --data-urlencode 'To=+18583537195' \
+          --data-urlencode 'MessagingServiceSid=MG6611ea65a7b8ce4f2cbacfdc90c173db' \
+          --data-urlencode 'Body=Hi! Welcome to Sorta's Message Subscriptions! We will be sending you weekly updates on waste disposal advice, recycling centers nearby, and how you can get involved in creating a cleaner enviornment! Text STOP to unsubscribe' \
+          -u AC505469728a3776edaf584af8befb9d2b:[Redacted]);
+          $server_outpput = curl_exec($ch);
+          curl_close($ch);
+          print $server_output;
+          ?>
         </body>
       </html>
     
