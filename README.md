@@ -21,5 +21,3 @@ We learned that there is a growing need for practical solutions in waste managem
 ## What's next for Sorta
 We're continually improving and expanding Sorta to reach more people and make a bigger impact. In the future, we hope to expand into new areas, provide even more personalized and relevant information, and work with communities to create sustainable waste management solutions. We're also exploring new ways to improve the accuracy and reliability of our machine-learning models and to integrate them into other waste management systems. The possibilities are endless, and we're excited to continue making a positive impact on the world with Sorta.
 
-
-Kevin's commit
