@@ -11898,6 +11898,16 @@ display:inline-block;
 background:#202528;
 
 }
+
+.cnt-block2{ 
+  float:left; 
+  width:100%; 
+  background:auto; 
+  padding:30px 20px; 
+  text-align:center; 
+  margin: 0 0 28px;
+ }
+
 .our-webcoderskull .cnt-block{ 
  float:left; 
  width:100%; 
